@@ -1,15 +1,40 @@
-<div style="text-align:center">
-  <h1>
-    MovieDB
-  </h1>
+<div class="app">
+  <header>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      
+          <h1><a routerLink="/home">MovieDB</a></h1>
+          <span class="toolbar-spacer"></span>
+
+          <ul class="header-bar">
+            <li></li>
+            <li><a routerLink="/movies">Movies</a></li>
+            <li><a routerLink="/reviews">Reviews</a></li> 
+            <li><a routerLink="/ratings">Ratings</a></li> 
+            <li>
+                <form class="search-form">
+                    <mat-form-field>
+                      <input type="search" matInput placeholder="Search movies or users...">
+                      <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                  </form>
+            </li>
+            <li><a routerLink="/user"><mat-icon class="account-link">account_circle</mat-icon> My Account</a></li>
+            <!-- <li><a routerLink="/login">Signup or Login</a></li> -->
+          </ul>
+
+           
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>
+
+  <div class="app-body">
+    <router-outlet></router-outlet>
+  </div>
+
+  <footer>
+    <p>MovieDB by Team3:</p>
+    <p>Angela Vu, Benjamin Vinicky, James Porter, Michael Warren</p>
+  </footer>
+
 </div>
-
-<!-- navigation menu to demonstrate routing is working (replace with design) -->
-<ul>
-  <li><a routerLink="/">Home</a></li>
-  <li><a routerLink="/user">User</a></li> 
-  <li><a routerLink="/movies">Movies</a></li>
-</ul>
-
-
-<router-outlet></router-outlet>
