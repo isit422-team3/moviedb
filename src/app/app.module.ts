@@ -8,13 +8,15 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 import { ApiService } from './services/api.service';
 import { DbClientService, SiteMovieModel } from './services/db-client.service';
+import { MovieScrollerComponent } from './movie-scroller/movie-scroller.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    EditProfileComponent
+    EditProfileComponent,
+    MovieScrollerComponent
   ],
   imports: [
     BrowserModule,

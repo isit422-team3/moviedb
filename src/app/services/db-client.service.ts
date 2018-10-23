@@ -19,6 +19,7 @@ export class SiteMovieModel {
   rating_count: number;
   review_count: number;
   background: string;
+  link: string;
 }
 
 
