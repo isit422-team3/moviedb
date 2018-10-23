@@ -1,0 +1,13 @@
+<div class="movieBar">
+    <div class="movieItem" *ngFor="let a of movielist; let i=index">
+      <div *ngIf="i<5">
+        <a href="{{a.link}}">
+          <img src="{{a.background}}" alt="{{a.title}}">
+        </a>
+        <div class="shortDetail">
+          <div>{{a.title}}</div>
+          <div>Ratings: {{a.rating}}</div>
+        </div>
+      </div>
+    </div>
+  </div>

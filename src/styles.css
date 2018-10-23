@@ -1,1 +1,84 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '@angular/material/prebuilt-themes/indigo-pink.css'; 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-toolbar {
+    background: #14234D !important;
+    color: white;
+}
+.mat-toolbar-row {
+    padding: 0 !important;
+    height: 100px !important;
+    width: 80% !important;
+    margin: 0 auto;
+}
+
+.mat-toolbar h1 a {
+    font-size: 2em !important;
+    text-decoration: none;
+    color: white;
+}
+
+.mat-list-item {
+    display: inline-block !important;
+    width: 50px;
+    color: white;
+}
+
+ul.header-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+}
+
+ul.header-bar li {
+    float: left;
+}
+
+ul.header-bar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+}
+
+ul.header-bar li a:hover {
+    font-weight: bold;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+}
+
+.app .app-body {
+    width: 80%;
+    /* height: 100%; */
+    padding: 1em;
+    margin: 0 auto;
+    background-color: white;
+}
+  
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+footer {
+    color: white;
+    min-height: 6em;
+    background-color: #14234D;
+    text-align: center;
+    padding: 2em;
+}
+
+.account-link {
+    display: block;
+    
+}
