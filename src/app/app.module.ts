@@ -4,12 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
-=======
 import { ApiService } from './services/api.service';
->>>>>>> US002;T1: Adds Injectable API service that any component can use to make api calls.
+import { DbClientService, SiteMovieModel } from './services/db-client.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,9 +19,13 @@ import { ApiService } from './services/api.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [ApiService],
+  providers: [
+    ApiService, 
+    SiteMovieModel,
+    DbClientService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

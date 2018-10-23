@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from  './services/api.service';
-
+import { MovieObjectService } from './services/movie-object.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,13 +7,11 @@ import { ApiService } from  './services/api.service';
 })
 export class AppComponent {
 
-  constructor(private svc: ApiService, ) {
-    this.svc.printToConsole("Got the service!");
-  }
+  constructor(private mos: MovieObjectService) {}
 
   ngOnInit() {
-    this.svc.TestAPICall();
+    this.mos.CreateMovieArray();
   }
-
+  CreateMovieArray
   title = 'moviedb';
 }
