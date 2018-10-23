@@ -11,7 +11,7 @@ export class MovieObjectService {
 
   constructor(private api: ApiService) {
     this.api.getImageConfigs().subscribe((response) => {
-      this.imagePrefix = response.images.base_url + response.images.backdrop_sizes[0];
+      this.imagePrefix = response["images"].base_url + response["images"].backdrop_sizes[0];
     })  
   }
 
@@ -25,12 +25,12 @@ export class MovieObjectService {
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
             let movieObject = new SiteMovieModel();
-            movieObject._id = response.id;
-            movieObject.rating = response.vote_average;
-            movieObject.rating_count = response.vote_count;
-            movieObject.title = response.title;
-            movieObject.link = response.homepage;
-            movieObject.background = this.imagePrefix + response.backdrop_path;
+            movieObject._id = response["id"];
+            movieObject.rating = response["vote_average"];
+            movieObject.rating_count = response["vote_count"];
+            movieObject.title = response["title"];
+            movieObject.link = response["homepage"];
+            movieObject.background = this.imagePrefix + response["backdrop_path"];
             localMovieArray.push(movieObject);   
       })
     }
