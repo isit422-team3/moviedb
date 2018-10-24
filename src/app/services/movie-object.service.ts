@@ -11,7 +11,7 @@ export class MovieObjectService {
 
   constructor(private api: ApiService) {
     this.api.getImageConfigs().subscribe((response) => {
-      this.imagePrefix = response["images"].base_url + response["images"].backdrop_sizes[0];
+      this.imagePrefix = response["images"].secure_base_url + response["images"].backdrop_sizes[0];
     })  
   }
 

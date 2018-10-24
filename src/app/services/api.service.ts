@@ -20,20 +20,19 @@ export class ApiService {
   }
 
   getTopMovies() {
-    let movie = this.http.get('http://api.themoviedb.org/3/discover/movie?api_key='+this.apiKey+'&primary_release_year=2018&include_adult=false&page=1&region=US&sort_by=popularity.desc');
+    let movie = this.http.get('https://api.themoviedb.org/3/discover/movie?api_key='+this.apiKey+'&primary_release_year=2018&include_adult=false&page=1&region=US&sort_by=popularity.desc');
     //movie.subscribe((response) => this.printMe(response));
     return movie;
   }
 
   getMovieDetails(id) {
-    let details = this.http.get('http://api.themoviedb.org/3/movie/'+id+'?api_key='+this.apiKey);
+    let details = this.http.get('https://api.themoviedb.org/3/movie/'+id+'?api_key='+this.apiKey);
     //details.subscribe((response) => this.printMe(response));
     return details
   }
 
   getImageConfigs() {
-    let imagePrefix;
-    let configs = this.http.get('http://api.themoviedb.org/3/configuration?api_key='+this.apiKey);
+    let configs = this.http.get('https://api.themoviedb.org/3/configuration?api_key='+this.apiKey);
     return configs;
   }
 }
