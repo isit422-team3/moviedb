@@ -16,9 +16,7 @@ export class MovieObjectService {
   }
 
   CreateMovieArray() {
-    
     let topMovies = this.api.getTopMovies();
-
     return new Promise(resolve => {
       topMovies.subscribe((response: any) => {
         let localMovieArray = [];
@@ -32,11 +30,76 @@ export class MovieObjectService {
             movieObject.link = response["homepage"];
             movieObject.background = this.imagePrefix + response["backdrop_path"];
             localMovieArray.push(movieObject);   
+          })
+        }
+        resolve(localMovieArray);
       })
-    }
-    resolve(localMovieArray);
-  })
-  });
-   
+    }); 
+  }
+
+  CreateTopMovieArray() {
+    let topMovies = this.api.getTopMovies();
+    return new Promise(resolve => {
+      topMovies.subscribe((response: any) => {
+        let localMovieArray = [];
+        for(let mov of response.results) {
+          this.api.getMovieDetails(mov.id).subscribe((response) => {
+            let movieObject = new SiteMovieModel();
+            movieObject._id = response["id"];
+            movieObject.rating = response["vote_average"];
+            movieObject.rating_count = response["vote_count"];
+            movieObject.title = response["title"];
+            movieObject.link = response["homepage"];
+            movieObject.background = this.imagePrefix + response["backdrop_path"];
+            localMovieArray.push(movieObject);   
+          })
+        }
+        resolve(localMovieArray);
+      })
+    }); 
+  }
+
+  CreateWorstMovieArray() {
+    let worstMovies = this.api.getWorstMovies();
+    return new Promise(resolve => {
+      worstMovies.subscribe((response: any) => {
+        let localMovieArray = [];
+        for(let mov of response.results) {
+          this.api.getMovieDetails(mov.id).subscribe((response) => {
+            let movieObject = new SiteMovieModel();
+            movieObject._id = response["id"];
+            movieObject.rating = response["vote_average"];
+            movieObject.rating_count = response["vote_count"];
+            movieObject.title = response["title"];
+            movieObject.link = response["homepage"];
+            movieObject.background = this.imagePrefix + response["backdrop_path"];
+            localMovieArray.push(movieObject);   
+          })
+        }
+        resolve(localMovieArray);
+      })
+    }); 
+  }
+
+  CreateInTheatresArray() {
+    let worstMovies = this.api.getInTheatresMovies();
+    return new Promise(resolve => {
+      worstMovies.subscribe((response: any) => {
+        let localMovieArray = [];
+        for(let mov of response.results) {
+          this.api.getMovieDetails(mov.id).subscribe((response) => {
+            let movieObject = new SiteMovieModel();
+            movieObject._id = response["id"];
+            movieObject.rating = response["vote_average"];
+            movieObject.rating_count = response["vote_count"];
+            movieObject.title = response["title"];
+            movieObject.link = response["homepage"];
+            movieObject.background = this.imagePrefix + response["backdrop_path"];
+            localMovieArray.push(movieObject);   
+          })
+        }
+        resolve(localMovieArray);
+      })
+    }); 
   }
 }

@@ -25,6 +25,18 @@ export class ApiService {
     return movie;
   }
 
+  getWorstMovies() {
+    let movie = this.http.get('https://api.themoviedb.org/3/discover/movie?api_key='+this.apiKey+'&primary_release_year=2018&include_adult=false&page=1&region=US&sort_by=popularity.asc');
+    //movie.subscribe((response) => this.printMe(response));
+    return movie;
+  }
+
+  getInTheatresMovies() {
+    let movie = this.http.get('https://api.themoviedb.org/3/discover/movie?api_key='+this.apiKey+'&primary_release_date.gte=2018-10-15&primary_release_date.lte=2018-11-15');
+    //movie.subscribe((response) => this.printMe(response));
+    return movie;
+  }
+
   getMovieDetails(id) {
     let details = this.http.get('https://api.themoviedb.org/3/movie/'+id+'?api_key='+this.apiKey);
     //details.subscribe((response) => this.printMe(response));
