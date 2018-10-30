@@ -5,12 +5,12 @@ import { UserComponent } from './user/user.component';
 import { MoviesComponent } from './movies/movies.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { RatingsComponent } from './ratings/ratings.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
-    { path: 'reviews', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'ratings', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'ratings', component: RatingsComponent},
     { path: 'user', component: UserComponent},
     { path: 'movies', component: MoviesComponent},
     { path: 'editProfile', component: EditProfileComponent},

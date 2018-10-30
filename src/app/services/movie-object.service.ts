@@ -102,4 +102,27 @@ export class MovieObjectService {
       })
     }); 
   }
+
+  CreateAllRatingsArray() {
+    let allRatings = this.api.getAllRatings();
+    return new Promise(resolve => {
+      allRatings.subscribe((response: any) => {
+        let localMovieArray = [];
+        for(let mov of response.results) {
+          this.api.getMovieDetails(mov.id).subscribe((response) => {
+            let movieObject = new SiteMovieModel();
+            movieObject._id = response["id"];
+            movieObject.rating = response["vote_average"];
+            movieObject.rating_count = response["vote_count"];
+            movieObject.title = response["title"];
+            movieObject.link = response["homepage"];
+            movieObject.background = this.imagePrefix + response["backdrop_path"];
+            localMovieArray.push(movieObject);   
+          })
+        }
+        resolve(localMovieArray);
+      })
+    }); 
+  }
+
 }

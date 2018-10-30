@@ -82,3 +82,27 @@ footer {
     display: block;
     
 }
+
+.section-mb {
+    margin-bottom: 3em;
+}
+
+section .mat-divider {
+    margin-bottom: 1rem!important;
+}
+
+td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type {
+    padding-right: 24px;
+}
+
+.mat-header-cell {
+    font-size: 1.5em!important;
+}
+
+.mat-cell {
+    font-size: 1em!important;
+}
+
+table.mat-table {
+    width: 100%;
+}
