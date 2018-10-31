@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieObjectService } from '../services/movie-object.service';
 
 @Component({
   selector: 'app-movies',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
+  topMovielist;
+  worstMovieList;
+  inTheatresList;
 
-  constructor() { }
+  constructor(private mos: MovieObjectService) { }
 
   ngOnInit() {
+    this.mos.CreateTopMovieArray()
+      .then((data) => this.topMovielist = data);
+    this.mos.CreateWorstMovieArray()
+      .then((data) => this.worstMovieList = data);
+    this.mos.CreateInTheatresArray()
+    .then((data) => this.inTheatresList = data);
   }
 
 }

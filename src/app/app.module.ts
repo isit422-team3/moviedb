@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { ApiService } from './services/api.service';
 import { DbClientService, SiteMovieModel } from './services/db-client.service';
 import { MovieScrollerComponent } from './movie-scroller/movie-scroller.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { RatingsComponent } from './ratings/ratings.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { MovieScrollerComponent } from './movie-scroller/movie-scroller.componen
     routingComponents,
     EditProfileComponent,
     MovieScrollerComponent,
-    HomeComponent
+    HomeComponent,
+    MovieDetailsComponent,
+    RatingsComponent
   ],
   imports: [
     BrowserModule,
