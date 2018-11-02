@@ -23,7 +23,7 @@ export class MovieObjectService {
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
             let movieObject = new SiteMovieModel();
-            movieObject._id = response["id"];
+            movieObject.movie_id = response["id"];
             movieObject.rating = response["vote_average"];
             movieObject.rating_count = response["vote_count"];
             movieObject.title = response["title"];
@@ -45,7 +45,7 @@ export class MovieObjectService {
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
             let movieObject = new SiteMovieModel();
-            movieObject._id = response["id"];
+            movieObject.movie_id = response["id"];
             movieObject.rating = response["vote_average"];
             movieObject.rating_count = response["vote_count"];
             movieObject.title = response["title"];
@@ -67,7 +67,7 @@ export class MovieObjectService {
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
             let movieObject = new SiteMovieModel();
-            movieObject._id = response["id"];
+            movieObject.movie_id = response["id"];
             movieObject.rating = response["vote_average"];
             movieObject.rating_count = response["vote_count"];
             movieObject.title = response["title"];
@@ -89,7 +89,7 @@ export class MovieObjectService {
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
             let movieObject = new SiteMovieModel();
-            movieObject._id = response["id"];
+            movieObject.movie_id = response["id"];
             movieObject.rating = response["vote_average"];
             movieObject.rating_count = response["vote_count"];
             movieObject.title = response["title"];
@@ -111,7 +111,7 @@ export class MovieObjectService {
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
             let movieObject = new SiteMovieModel();
-            movieObject._id = response["id"];
+            movieObject.movie_id = response["id"];
             movieObject.rating = response["vote_average"];
             movieObject.rating_count = response["vote_count"];
             movieObject.title = response["title"];
