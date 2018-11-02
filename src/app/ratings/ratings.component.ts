@@ -20,9 +20,9 @@ export class RatingsComponent implements OnInit {
 
   ngOnInit() {
     this.mos.CreateAllRatingsArray()
-    .then((data) => this.allRatings = data);
-    this.dataSource = new MatTableDataSource<Movie>(RATINGS_DATA);
-    this.dataSource.paginator = this.paginator;
+    .then((data) => {this.allRatings = data
+    this.dataSource = new MatTableDataSource<Movie>(this.allRatings);
+    this.dataSource.paginator = this.paginator});
   }
 
 }
