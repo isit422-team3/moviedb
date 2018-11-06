@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
@@ -15,7 +16,8 @@ import { DbClientService, SiteMovieModel } from './services/db-client.service';
 import { MovieScrollerComponent } from './movie-scroller/movie-scroller.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { RatingsComponent } from './ratings/ratings.component';
-
+import { UsersigninComponent } from './usersignin/usersignin.component';
+import { CreateaccountComponent } from './createaccount/createaccount.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,17 @@ import { RatingsComponent } from './ratings/ratings.component';
     MovieScrollerComponent,
     HomeComponent,
     MovieDetailsComponent,
-    RatingsComponent
+    RatingsComponent,
+    UsersigninComponent,
+    CreateaccountComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [
     ApiService, 
