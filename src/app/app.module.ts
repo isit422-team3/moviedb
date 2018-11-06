@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 
 
 import { ApiService } from './services/api.service';
-import { DbClientService, SiteMovieModel } from './services/db-client.service';
+import { DbClientService } from './services/db-client.service';
 import { MovieScrollerComponent } from './movie-scroller/movie-scroller.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { RatingsComponent } from './ratings/ratings.component';
@@ -36,7 +36,6 @@ import { RatingsComponent } from './ratings/ratings.component';
   ],
   providers: [
     ApiService, 
-    SiteMovieModel,
     DbClientService,
     MaterialModule,
     BrowserAnimationsModule,

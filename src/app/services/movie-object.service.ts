@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { SiteMovieModel } from './db-client.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +21,7 @@ export class MovieObjectService {
         let localMovieArray = [];
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
-            let movieObject = new SiteMovieModel();
+            let movieObject;
             movieObject.movie_id = response["id"];
             movieObject.rating = response["vote_average"];
             movieObject.rating_count = response["vote_count"];
@@ -44,7 +43,7 @@ export class MovieObjectService {
         let localMovieArray = [];
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
-            let movieObject = new SiteMovieModel();
+            let movieObject;
             movieObject.movie_id = response["id"];
             movieObject.rating = response["vote_average"];
             movieObject.rating_count = response["vote_count"];
@@ -66,7 +65,7 @@ export class MovieObjectService {
         let localMovieArray = [];
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
-            let movieObject = new SiteMovieModel();
+            let movieObject;
             movieObject.movie_id = response["id"];
             movieObject.rating = response["vote_average"];
             movieObject.rating_count = response["vote_count"];
@@ -88,7 +87,7 @@ export class MovieObjectService {
         let localMovieArray = [];
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
-            let movieObject = new SiteMovieModel();
+            let movieObject;
             movieObject.movie_id = response["id"];
             movieObject.rating = response["vote_average"];
             movieObject.rating_count = response["vote_count"];
@@ -110,7 +109,7 @@ export class MovieObjectService {
         let localMovieArray = [];
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
-            let movieObject = new SiteMovieModel();
+            let movieObject;
             movieObject.movie_id = response["id"];
             movieObject.rating = response["vote_average"];
             movieObject.rating_count = response["vote_count"];
