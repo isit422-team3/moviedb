@@ -59,25 +59,25 @@
             <div class="card">FirstName wrote a review</div>
         </div>
         <div class="column">
-            <div class="card" routerLink="/movieDetails">Interstellar</div>
+            <div class="card" routerLink="/movieDetails" [queryParams]="{name: 'Interstellar'}" >Interstellar</div>
         </div>
         <div class="column">
             <div class="card">FirstName followed FirstName</div>
         </div>
         <div class="column">
-            <div class="card">Central Intelligence</div>
+            <div class="card" routerLink="/movieDetails" [queryParams]="{name: 'Central Intelligence'}">Central Intelligence</div>
         </div>
         <div class="column">
             <div class="card">FirstName favorited MovieName</div>
         </div>
         <div class="column">
-            <div class="card">Lion King</div>
+            <div class="card" routerLink="/movieDetails" [queryParams]="{name: 'Lion King'}">Lion King</div>
         </div>
         <div class="column">
             <div class="card">FirstName wrote a review</div>
         </div>
         <div class="column">
-            <div class="card">I Am Legend</div>
+            <div class="card" routerLink="/movieDetails" [queryParams]="{name: 'I am Legend'}">I Am Legend</div>
         </div>
         <input class="column2" name="load" value="load more" />
     </div>
