@@ -52,5 +52,10 @@ export class ApiService {
     let ratings = this.http.get('https://api.themoviedb.org/3/discover/movie?api_key='+this.apiKey+'&certification_country=US&vote_count.gte=1000&sort_by=vote_average.desc');
     return ratings;
   }
+
+  getSearch(name) {
+    let movie = this.http.get('https://api.themoviedb.org/3/search/movie?api_key='+this.apiKey+'&query='+name);
+    return movie;
+  }
 }
 
