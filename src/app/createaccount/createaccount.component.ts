@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateaccountComponent implements OnInit {
 
+  signupData = { username:'', password:'' };
+  message = '';
+  
   constructor() { }
 
   ngOnInit() {
   }
+
+  signup() { }
 
 }

@@ -18,4 +18,6 @@ export class UsersigninComponent implements OnInit {
   ngOnInit() {
   }
 
+  login () {}
+
 }
