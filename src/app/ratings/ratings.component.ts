@@ -6,7 +6,7 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 @Component({
   selector: 'app-ratings',
   templateUrl: './ratings.component.html',
-  styleUrls: ['./ratings.component.css']
+  styleUrls: ['./ratings.component.scss']
 })
 export class RatingsComponent implements OnInit {
   allRatings;
