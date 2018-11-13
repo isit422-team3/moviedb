@@ -8,6 +8,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { RatingsComponent } from './ratings/ratings.component';
 import { UsersigninComponent } from './usersignin/usersignin.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
+import { ReviewComponent } from './review/review.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
     { path: 'editProfile', component: EditProfileComponent},
     { path: 'movieDetails', component: MovieDetailsComponent},
     { path: 'userSignIn', component: UsersigninComponent},
-    { path: 'createAccount', component: CreateaccountComponent}
+    { path: 'createAccount', component: CreateaccountComponent},
+    { path: 'review', component: ReviewComponent}
 ];
 
 @NgModule({
@@ -26,4 +28,4 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [UserComponent, MoviesComponent, EditProfileComponent, MovieDetailsComponent]
+export const routingComponents = [UserComponent, MoviesComponent, EditProfileComponent, MovieDetailsComponent, ReviewComponent]
