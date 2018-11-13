@@ -20,6 +20,8 @@ import { UsersigninComponent } from './usersignin/usersignin.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
 import { ReviewComponent } from './review/review.component';
 
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { ReviewComponent } from './review/review.component';
     HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    CarouselModule.forRoot()
   ],
   providers: [
     ApiService, 

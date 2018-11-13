@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MovieObjectService } from '../services/movie-object.service';
 
 @Component({
@@ -7,13 +7,15 @@ import { MovieObjectService } from '../services/movie-object.service';
   styleUrls: ['./movie-scroller.component.scss']
 })
 export class MovieScrollerComponent implements OnInit {
-  movielist;
+  @Input() name: string;
+  @Input() movielist;
+  //movielist;
 
   constructor(private mos: MovieObjectService) { }
 
   ngOnInit() {
-    this.mos.CreateMovieArray()
-      .then((data) => this.movielist = data);
+    // this.mos.CreateMovieArray()
+    //   .then((data) => this.movielist = data);
   }
 
 }
