@@ -131,6 +131,29 @@ export class MovieObjectService {
     }); 
   }
 
+  CreateGenreArray(genre) {
+    let movieGenre = this.api.getMoviesByGenre(genre);
+    return new Promise(resolve => {
+      movieGenre.subscribe((response: any) => {
+        let localMovieArray = [];
+        for(let mov of response.results) {
+          this.api.getMovieDetails(mov.id).subscribe((response) => {
+            //let movieObject;
+            let movieObject = new SiteMovieModel;
+            movieObject.movie_id = response["id"];
+            movieObject.rating = response["vote_average"];
+            movieObject.rating_count = response["vote_count"];
+            movieObject.title = response["title"];
+            movieObject.link = response["homepage"];
+            movieObject.background = this.imagePrefix + response["backdrop_path"];
+            localMovieArray.push(movieObject);   
+          })
+        }
+        resolve(localMovieArray);
+      })
+    }); 
+  }
+
   CreateSearchMovieArray(name) {
     let movie = this.api.getSearch(name);
     return new Promise(resolve => {

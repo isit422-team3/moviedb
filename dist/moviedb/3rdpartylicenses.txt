@@ -404,6 +404,10 @@ MIT
 
 @angular/material/paginator
 
+ngx-bootstrap/utils
+
+ngx-bootstrap/carousel
+
 @angular/material/toolbar
 
 @angular/material/icon

@@ -42,7 +42,12 @@ export class ApiService {
   getMovieDetails(id) {
     let details = this.http.get('https://api.themoviedb.org/3/movie/'+id+'?api_key='+this.apiKey);
     //details.subscribe((response) => this.printMe(response));
-    return details
+    return details;
+  }
+
+  getMoviesByGenre(genreID) {
+    let movies = this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=' + this.apiKey +'&language=en-US&sort_by=popularity.desc&include_adult=false&page=1&with_genres=' + genreID);
+    return movies;
   }
 
   getImageConfigs() {
