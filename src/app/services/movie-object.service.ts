@@ -161,7 +161,7 @@ export class MovieObjectService {
         let localMovieArray = [];
         for(let mov of response.results) {
           this.api.getMovieDetails(mov.id).subscribe((response) => {
-            let movieObject;
+            let movieObject = new SiteMovieModel;;
            // console.log("results: " + JSON.stringify(response));
             movieObject.movie_id = response["id"];
             movieObject.rating = response["vote_average"];
