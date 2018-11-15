@@ -56,7 +56,7 @@
         <div class="column"><strong>Latest Activity</strong></div>
         <div class="column"><strong>FirstName's favorite movie</strong></div>
         <div class="column">
-            <div class="card">FirstName wrote a review</div>
+            <div class="card" routerLink="/review" [queryParams]="{name: 'Interstellar'}">FirstName wrote a review</div>
         </div>
         <div class="column">
             <div class="card" routerLink="/movieDetails" [queryParams]="{name: 'Interstellar'}" >Interstellar</div>
@@ -74,7 +74,7 @@
             <div class="card" routerLink="/movieDetails" [queryParams]="{name: 'Lion King'}">Lion King</div>
         </div>
         <div class="column">
-            <div class="card">FirstName wrote a review</div>
+            <div class="card" routerLink="/review" [queryParams]="{name: 'I am Legend'}">FirstName wrote a review</div>
         </div>
         <div class="column">
             <div class="card" routerLink="/movieDetails" [queryParams]="{name: 'I am Legend'}">I Am Legend</div>

@@ -18,6 +18,9 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { RatingsComponent } from './ratings/ratings.component';
 import { UsersigninComponent } from './usersignin/usersignin.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
+import { ReviewComponent } from './review/review.component';
+
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
     MovieDetailsComponent,
     RatingsComponent,
     UsersigninComponent,
-    CreateaccountComponent
+    CreateaccountComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
     HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    CarouselModule.forRoot()
   ],
   providers: [
     ApiService, 

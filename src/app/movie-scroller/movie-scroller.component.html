@@ -1,13 +1,72 @@
-<div class="movieBar">
+<carousel>
+  <slide>
     <div class="movieItem" *ngFor="let a of movielist; let i=index">
       <div *ngIf="i<5">
-        <a href="{{a.link}}">
-          <img src="{{a.background}}" alt="{{a.title}}">
-        </a>
-        <div class="shortDetail">
-          <div>{{a.title}}</div>
-          <div>Ratings: {{a.rating}}</div>
+        <div class="text-center py-5" style="float:left; width: 20%">
+          <div class="col-sm-2">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{a.background}}" alt="{{a.title}}">
+              <div class="card-body">
+                <h3><a href="{{a.link}}">{{a.title}}</a></h3>
+                <p class="card-text">Rating: {{a.rating}}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </slide>
+  <slide>
+    <div class="movieItem" *ngFor="let a of movielist; let i=index">
+      <div *ngIf="i>4 && i<10">
+        <div class="text-center py-5" style="float:left; width: 20%">
+          <div class="col-sm-2">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{a.background}}" alt="{{a.title}}">
+              <div class="card-body">
+                <h3><a href="{{a.link}}">{{a.title}}</a></h3>
+                <p class="card-text">Rating: {{a.rating}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </slide>
+  <slide>
+    <div class="movieItem" *ngFor="let a of movielist; let i=index">
+      <div *ngIf="i>9 && i <15">
+        <div class="text-center py-5" style="float:left; width: 20%">
+          <div class="col-sm-2">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{a.background}}" alt="{{a.title}}">
+              <div class="card-body">
+                <h3><a href="{{a.link}}">{{a.title}}</a></h3>
+                <p class="card-text">Rating: {{a.rating}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </slide>
+  <slide>
+    <div class="movieItem" *ngFor="let a of movielist; let i=index">
+      <div *ngIf="i>14 && i <20">
+        <div class="text-center py-5" style="float:left; width: 20%">
+          <div class="col-sm-2">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{a.background}}" alt="{{a.title}}">
+              <div class="card-body">
+                <h3><a href="{{a.link}}">{{a.title}}</a></h3>
+                <p class="card-text">Rating: {{a.rating}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </slide>
+</carousel>
+
+

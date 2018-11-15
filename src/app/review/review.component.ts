@@ -4,11 +4,11 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-movie-details',
-  templateUrl: './movie-details.component.html',
-  styleUrls: ['./movie-details.component.scss']
+  selector: 'app-review',
+  templateUrl: './review.component.html',
+  styleUrls: ['./review.component.scss']
 })
-export class MovieDetailsComponent implements OnInit {
+export class ReviewComponent implements OnInit {
   allRatings;
   displayedColumns: string[] = ['title','rating','link','background'];
   dataSource;
@@ -23,15 +23,7 @@ export class MovieDetailsComponent implements OnInit {
     this.route.queryParams.subscribe((movie) => this.movie = movie);
     this.mos.CreateSearchMovieArray(this.movie.name)
     .then((data) => {this.allRatings = data;
-    console.log(data);
-  });
-    
+    console.log(data)});
   }
-}
 
-export interface Movie {
-  title: string;
-  rating: number;
-  link: string;
-  background: string;
 }

@@ -9,3 +9,16 @@ export class DbClientService {
   constructor() {
   }
 }
+
+export class SiteMovieModel {
+  movie_id: number; 
+  title: string;
+  rating: number;
+  rating_count: number;
+  release: string;
+  genre: string;
+  description: string;
+  review_count: number;
+  background: string;
+  link: string;
+}
