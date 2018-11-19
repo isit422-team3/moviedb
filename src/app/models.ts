@@ -4,7 +4,7 @@ export class DBMovie {
     title: string;
     rating: number
     rating_count: number;
-    reviews: number;
+    reviews: number[];
     review_count: number;
     api_link: string
 }
@@ -15,6 +15,7 @@ export class Movie {
     title: string;
     rating: number;
     rating_count: number;
+    reviews: number[];
     release: string;
     genre: string;
     description: string;
@@ -41,13 +42,13 @@ export class User {
     username: string;
     password: string;
     phone_number: string;
-    movie_favorites: [number];
+    movie_favorites: number[];
     location: string;
     profile_picture: string;
     biography: string;
-    ratings: [number];
+    ratings: number[];
     rating_count: number;
-    reviews: [number];
+    reviews: number[];
     review_count: number;
     status: string;
     settings: any;
