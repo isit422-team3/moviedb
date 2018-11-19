@@ -19,6 +19,19 @@ function getMovies(req, res) {
       });
 }
 
+function getMovie(req, res) {
+    const docquery = Movie.find({movie_id: req.body.movie_id});
+    docquery
+      .exec()
+      .then(movie => {
+          res.status(200).json(movie);
+      })
+      .catch(error => {
+          res.status(500).send(error);
+          return;
+      });
+}
+
 function postMovie(req, res) {
     const inMov = {
         movie_id: req.body.movie_id,
@@ -278,7 +291,9 @@ module.exports = {
     PutUser,
     postUser,
     getUser,
-    PutMovie
+    PutMovie,
+    deleteMovie,
+    getMovie
 }
 ////////////////////////////////////////////////////////////////////////////
 

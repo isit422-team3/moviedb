@@ -16,6 +16,9 @@ export class DbClientService {
   getMovies() {
     return this.http.get<Array<DBMovie>>(`${api}/movies`)
   }
+  getMovie(movie: DBMovie) {
+    return this.http.get<DBMovie>(`${api}/movie/${movie.movie_id}`)
+  }
   deleteMovie(movie: DBMovie) {
     return this.http.delete(`${api}/movie/${movie.movie_id}`);
   }
@@ -29,13 +32,13 @@ export class DbClientService {
   
   //REVIEW METHODS: Note- if you want to get reviews then get the movie object and view its [reviews]
   deleteReview(review: Review) {
-    return this.http.delete(`${api}/reviews/${review.movie_id, review.author_id}`);
+    return this.http.delete(`${api}/review/${review.movie_id}/${review.author_id}`);
   }
   addReview(review: Review) {
-    return this.http.post<Review>(`${api}/reviews/`, review);
+    return this.http.post<Review>(`${api}/review/`, review);
   }
   updateReview(review: Review) {
-    return this.http.put<Review>(`${api}/reviews/${review.movie_id, review.author_id}`, review);
+    return this.http.put<Review>(`${api}/review/${review.movie_id}/${review.author_id}`, review);
   }
   ////////////////////////////////////////////////////////////////////////////
   
