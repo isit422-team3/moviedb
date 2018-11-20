@@ -1,6 +1,6 @@
 const Movie = require('./models/movie.model');
 const User = require('./models/user.model');
-const Review = require('./models/Review.model');
+const Review = require('./models/review.model');
 
 require('./mongo').connect();
 
@@ -283,7 +283,6 @@ function checkUser(res, user) {
 module.exports = {
     getMovies,
     postMovie,
-    postMovieTest,
     deleteReview,
     PutReview,
     postReview,
