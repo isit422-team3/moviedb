@@ -33,6 +33,11 @@ export class ApiService {
     return movie;
   }
 
+  getMoviesByDisney() {
+    let movies = this.http.get('https://api.themoviedb.org/3/discover/movie?api_key='+this.apiKey+'&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_companies=2');
+    return movies;
+  }
+
   getInTheatresMovies() {
     let movie = this.http.get('https://api.themoviedb.org/3/discover/movie?api_key='+this.apiKey+'&primary_release_date.gte=2018-10-15&primary_release_date.lte=2018-11-15');
     //movie.subscribe((response) => this.printMe(response));

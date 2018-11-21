@@ -85,6 +85,29 @@ export class MovieObjectService {
     }); 
   }
 
+  CreateMoviesByDisneyArray() {
+    let disneyMovies = this.api.getMoviesByDisney();
+    return new Promise(resolve => {
+      disneyMovies.subscribe((response: any) => {
+        let localMovieArray = [];
+        for(let mov of response.results) {
+          this.api.getMovieDetails(mov.id).subscribe((response) => {
+            //let movieObject;
+            let movieObject = new Movie;
+            movieObject.movie_id = response["id"];
+            movieObject.rating = response["vote_average"];
+            movieObject.rating_count = response["vote_count"];
+            movieObject.title = response["title"];
+            movieObject.link = response["homepage"];
+            movieObject.background = this.imagePrefix + response["backdrop_path"];
+            localMovieArray.push(movieObject);   
+          })
+        }
+        resolve(localMovieArray);
+      })
+    }); 
+  }
+
   CreateInTheatresArray() {
     let worstMovies = this.api.getInTheatresMovies();
     return new Promise(resolve => {
