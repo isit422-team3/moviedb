@@ -21,6 +21,7 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
 import { ReviewComponent } from './review/review.component';
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { InboxComponent } from './inbox/inbox.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     RatingsComponent,
     UsersigninComponent,
     CreateaccountComponent,
-    ReviewComponent
+    ReviewComponent,
+    InboxComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { RatingsComponent } from './ratings/ratings.component';
 import { UsersigninComponent } from './usersignin/usersignin.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
 import { ReviewComponent } from './review/review.component';
+import { InboxComponent } from './inbox/inbox.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,7 +21,8 @@ const routes: Routes = [
     { path: 'movieDetails', component: MovieDetailsComponent},
     { path: 'userSignIn', component: UsersigninComponent},
     { path: 'createAccount', component: CreateaccountComponent},
-    { path: 'review', component: ReviewComponent}
+    { path: 'review', component: ReviewComponent},
+    { path: 'inbox', component: InboxComponent}
 ];
 
 @NgModule({
@@ -28,4 +30,5 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [UserComponent, MoviesComponent, EditProfileComponent, MovieDetailsComponent, ReviewComponent]
+export const routingComponents = [UserComponent, MoviesComponent, EditProfileComponent,
+     MovieDetailsComponent, ReviewComponent, InboxComponent]

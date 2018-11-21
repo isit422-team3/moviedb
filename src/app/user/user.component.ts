@@ -12,4 +12,12 @@ export class UserComponent implements OnInit {
   ngOnInit() {
   }
 
+  openMessage() {
+    document.getElementById("myMessage").style.display = "block";
+  }
+  
+  closeMessage() {
+    document.getElementById("myMessage").style.display = "none";
+  }
+
 }
