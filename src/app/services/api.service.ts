@@ -65,6 +65,16 @@ export class ApiService {
     return ratings;
   }
 
+  getMoviesTrendingByDay() {
+    let ratings = this.http.get('https://api.themoviedb.org/3/trending/movie/day?api_key='+this.apiKey);
+    return ratings;
+  }
+
+  getMoviesTrendingByWeek() {
+    let ratings = this.http.get('https://api.themoviedb.org/3/trending/movie/week?api_key='+this.apiKey);
+    return ratings;
+  }
+
   getSearch(name) {
     let movie = this.http.get('https://api.themoviedb.org/3/search/movie?api_key='+this.apiKey+'&query='+name);
     return movie;
