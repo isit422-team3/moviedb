@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MovieObjectService } from '../services/movie-object.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  topMovielist;
 
-  constructor() { }
+  constructor(private mos: MovieObjectService) { }
 
   ngOnInit() {
+    this.mos.CreateTopMovieArray()
+      .then((data) => this.topMovielist = data);
   }
 
 }
