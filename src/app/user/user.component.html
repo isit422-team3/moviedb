@@ -10,11 +10,11 @@
                 <div class="profile-img">
                     <img src="https://icon2.kisspng.com/20180401/huw/kisspng-user-profile-computer-icons-clip-art-profile-5ac092f6be0823.5326777215225699747784.jpg"
                         alt="" />
-                    <div class="file btn btn-lg btn-primary">
-                        Change Photo
-                        <input type="file" name="file" />
+                    <div>
+                        <input class="follow-btn" (click)="openMessage()" type="button" value="message">
                     </div>
                 </div>
+
             </div>
 
             <div class="col-md-2">
@@ -59,13 +59,14 @@
             <div class="card" routerLink="/review" [queryParams]="{name: 'Interstellar'}">FirstName wrote a review</div>
         </div>
         <div class="column">
-            <div class="card" routerLink="/movieDetails" [queryParams]="{name: 'Interstellar'}" >Interstellar</div>
+            <div class="card" routerLink="/movieDetails" [queryParams]="{name: 'Interstellar'}">Interstellar</div>
         </div>
         <div class="column">
             <div class="card">FirstName followed FirstName</div>
         </div>
         <div class="column">
-            <div class="card" routerLink="/movieDetails" [queryParams]="{name: 'Central Intelligence'}">Central Intelligence</div>
+            <div class="card" routerLink="/movieDetails" [queryParams]="{name: 'Central Intelligence'}">Central
+                Intelligence</div>
         </div>
         <div class="column">
             <div class="card">FirstName favorited MovieName</div>
@@ -81,4 +82,22 @@
         </div>
         <input class="column2" name="load" value="load more" />
     </div>
+</div>
+<div class="message-popup" id="myMessage">
+    <div class="close">
+        <p (click)="closeMessage()">x</p>
+    </div>
+    <form action="http://localhost:4200/user" class="message-container">
+        <h1>New Message</h1>
+
+        <label for="title"><b>Title:</b></label>
+        <input type="text" placeholder="Enter Title" name="title" required>
+
+        <label for="message"><b>Message</b></label>
+        <!-- <input type="text" placeholder="Type Message..." name="message" required> -->
+        <textarea placeholder="Type Message..." rows="10" cols="50"></textarea>
+
+        <button type="submit" class="btn" (click)="closeMessage()">Send</button>
+        <button type="submit" class="btn cancel" (click)="closeMessage()">Cancel</button>
+    </form>
 </div>

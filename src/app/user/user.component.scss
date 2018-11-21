@@ -121,6 +121,11 @@ p{
     font-size: 15px;
     font-weight: 600;
 }
+.right {
+    position: absolute;
+    //top: 370px;
+    left: 150px;
+}
 /* Remove extra left and right margins, due to padding in columns */
 .row {margin: 0 -5px;}
   
@@ -137,4 +142,79 @@ p{
         display: block;
         margin-bottom: 20px;
     }
+}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  width: 600px;
+}
+
+/* The popup form - hidden by default */
+.message-popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  border: 3px solid #f1f1f1;
+}
+
+/* Add styles to the form container */
+.message-container {
+  //max-width: 300px;
+  padding: 10px;
+  background-color: rgb(83, 211, 228);
+}
+
+/* Full-width input fields */
+.message-container input[type=text], .message-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.message-container input[type=text]:focus, .message-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.message-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.message-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.message-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.close {
+    position: fixed;
+    top: 5px;
+    right: 11px;
 }
