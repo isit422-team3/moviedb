@@ -10,7 +10,7 @@
 
         <form class="movie-search">
             <mat-form-field class="movie-field">
-                <input matInput placeholder="Movie Title" value="">
+                <input name="movie" ngModel required #movie="ngModel" matInput placeholder="Movie Title" value="">
             </mat-form-field>
             
             <mat-form-field class="movie-field">
@@ -18,7 +18,7 @@
                 </mat-form-field>
         </form>
 
-        <button mat-flat-button color="primary">Search</button>
+        <button mat-flat-button color="primary" routerLink="/movieDetails" [queryParams]="{name: movie.value}">Search</button>
     </section>
 
     <section>

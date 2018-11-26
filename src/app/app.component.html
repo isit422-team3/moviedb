@@ -13,15 +13,14 @@
             <li>
                 <form class="search-form">
                     <mat-form-field>
-                      <input type="search" matInput placeholder="Search movies or users...">
-                      <mat-icon matSuffix>search</mat-icon>
+                      <input name="movie" ngModel required #movie="ngModel" type="search" matInput placeholder="Search movies or users...">
+                      <mat-icon matSuffix routerLink="/movieDetails" [queryParams]="{name: movie.value}">search</mat-icon>
                     </mat-form-field>
                   </form>
             </li>
             <li><a routerLink="/userSignIn"><mat-icon class="account-link">account_circle</mat-icon> My Account</a></li>
              <li><a routerLink="/inbox"><mat-icon >email</mat-icon>Inbox</a></li> 
           </ul>
-
            
     </mat-toolbar-row>
   </mat-toolbar>
