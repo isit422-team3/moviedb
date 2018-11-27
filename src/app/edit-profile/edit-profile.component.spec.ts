@@ -22,4 +22,11 @@ describe('EditProfileComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should render first name in a div tag', async(() => {
+    const fixture = TestBed.createComponent(EditProfileComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('div').textContent).toContain('First name:');
+  }));
 });

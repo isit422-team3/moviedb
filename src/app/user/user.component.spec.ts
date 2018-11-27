@@ -22,4 +22,11 @@ describe('UserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render title in a strong tag', async(() => {
+    const fixture = TestBed.createComponent(UserComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('strong').textContent).toContain('FirstName LastName');
+  }));
 });

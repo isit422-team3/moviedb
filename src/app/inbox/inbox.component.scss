@@ -10,13 +10,16 @@
 }
 .input {
     position: absolute;
-    top: 111%;
-    left: 27.55%;
+    bottom: 0;
+    right: 0;
     border-top: solid;
-    width: 60.09%;
+    width: 100%;
 }
-input[type=text] {
-    width: 590px;
+input {
+    width: 95%;
+ }
+ .input button {
+    width: 5%;
  }
 .list {
     border-bottom: solid;
@@ -24,7 +27,8 @@ input[type=text] {
     background-color: rgb(212, 209, 209);
 }
 .list1 {
-    border-bottom: solid;
+    border: solid;
+    border-color: red;
     height: 6%;
     background-color: #aaa;
 }
@@ -36,12 +40,19 @@ input[type=text] {
     width: 20%;
 }
 
+.move {
+    position: absolute;
+    bottom: 5%;
+    width: 100%
+}
+
 .display {
     border: solid;
     float: left;
     height: 100%;
     width: 80%;
     background-color: rgb(83, 211, 228);
+    position: relative;
 }
 
 /* Chat containers */
@@ -92,10 +103,4 @@ input[type=text] {
 .time-left {
     float: left;
     color: #999;
-}
-.move {
-    position: absolute;
-    top: 57%;
-    left: 28%;
-    width: 58.5%;
 }
