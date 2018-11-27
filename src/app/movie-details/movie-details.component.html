@@ -4,20 +4,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="boxed" >
-  <h2>{{allRatings[0].title}}</h2>
+  <div *ngFor="let a of allRatings; let i=index">
+    <div *ngIf="i<1">
+  <h2>{{a.title}}</h2>
   <div class="movie">
     <div>
-      <img src="{{allRatings[0].background}}" alt="" style="width:325px;height:400px;" />
+      <img src="{{a.background}}" alt="" style="width:325px;height:400px;" />
       <div class="right">
-        <p>Genre: {{allRatings[0].genre}}</p>
-      <p>Year Released: {{allRatings[0].release}}</p>
-      <p>Rating: {{allRatings[0].rating/2}}
+        <p>Genre: {{a.genre}}</p>
+      <p>Year Released: {{a.release}}</p>
+      <p>Rating: {{a.rating/2}}
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span></p>
-        <p>homepage: <a href="{{allRatings[0].link}}" >click here</a></p>
+        <p>homepage: <a href="{{a.link}}" >click here</a></p>
       </div>
       <div>
 
@@ -25,8 +27,10 @@
     </div>
     <div class="box">
       <h3>Movie description:</h3>
-      <p>{{allRatings[0].description}}</p>
+      <p>{{a.description}}</p>
     </div>
+  </div>
+  </div>
   </div>
 
   <div class="review">
