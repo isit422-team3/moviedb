@@ -1,32 +1,162 @@
 <div class="container-fluid">
-    <section class="section-mb">
-      <h2>Top Movie Ratings of All Time</h2>
-      <mat-divider></mat-divider>
+  <section class="section-mb">
+    <h2>Movies Trending Today</h2>
+    <mat-divider></mat-divider>
 
-      <div class="mat-elevation-z8">
-        <mat-table [dataSource]="dataSource">
-    
-          <ng-container matColumnDef="title">
-            <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
-            <mat-cell *matCellDef="let movie">{{movie.title}}</mat-cell>
-          </ng-container>
-      
-          <ng-container matColumnDef="rating">
-            <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
-            <mat-cell *matCellDef="let movie">{{movie.vote_average}}</mat-cell>
-          </ng-container>
-      
-          <ng-container matColumnDef="releaseDate">
-            <mat-header-cell *matHeaderCellDef> Release Date </mat-header-cell>
-            <mat-cell *matCellDef="let movie">{{movie.release_date | date:'mediumDate'}}</mat-cell>
-          </ng-container>
-      
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    
-        </mat-table>
-    
-        <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
-      </div>
-    </section>
+    <div class="mat-elevation-z8">
+      <mat-table [dataSource]="dayTrendingDataSource">
+
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.title}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="rating">
+          <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.vote_average}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="releaseDate">
+          <mat-header-cell *matHeaderCellDef> Release Date </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.release_date | date:'mediumDate'}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+      </mat-table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+    </div>
+  </section>
+
+  <section class="section-mb">
+    <h2>Movies Trending This Week</h2>
+    <mat-divider></mat-divider>
+
+    <div class="mat-elevation-z8">
+      <mat-table [dataSource]="weekTrendingDataSource">
+
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.title}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="rating">
+          <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.vote_average}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="releaseDate">
+          <mat-header-cell *matHeaderCellDef> Release Date </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.release_date | date:'mediumDate'}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+      </mat-table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+    </div>
+  </section>
+
+  <section class="section-mb">
+    <h2>Top Movie Ratings of All Time</h2>
+    <mat-divider></mat-divider>
+
+    <div class="mat-elevation-z8">
+      <mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.title}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="rating">
+          <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.vote_average}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="releaseDate">
+          <mat-header-cell *matHeaderCellDef> Release Date </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.release_date | date:'mediumDate'}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+      </mat-table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+    </div>
+  </section>
+
+  <section class="section-mb">
+    <h2>Top Movies of 2018</h2>
+    <mat-divider></mat-divider>
+
+    <div class="mat-elevation-z8">
+      <mat-table [dataSource]="top2018MoviesDataSource">
+
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.title}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="rating">
+          <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.vote_average}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="releaseDate">
+          <mat-header-cell *matHeaderCellDef> Release Date </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.release_date | date:'mediumDate'}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+      </mat-table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+    </div>
+  </section>
+
+
+  <section class="section-mb">
+    <h2>Worst 2018 Movies</h2>
+    <mat-divider></mat-divider>
+
+    <div class="mat-elevation-z8">
+      <mat-table [dataSource]="worst2018MoviesDataSource">
+
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.title}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="rating">
+          <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.vote_average}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="releaseDate">
+          <mat-header-cell *matHeaderCellDef> Release Date </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.release_date | date:'mediumDate'}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="popularity">
+          <mat-header-cell *matHeaderCellDef> Popularity </mat-header-cell>
+          <mat-cell *matCellDef="let movie">{{movie.popularity}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="popularityDisplayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: popularityDisplayedColumns;"></mat-row>
+
+      </mat-table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+    </div>
+  </section>
 </div>

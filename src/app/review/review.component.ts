@@ -23,7 +23,8 @@ export class ReviewComponent implements OnInit {
     this.route.queryParams.subscribe((movie) => this.movie = movie);
     this.mos.CreateSearchMovieArray(this.movie.name)
     .then((data) => {this.allRatings = data;
-    console.log(data)});
+    console.log(data);
+  });
   }
 
 }

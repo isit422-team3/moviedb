@@ -8,7 +8,7 @@ import { MovieObjectService } from '../services/movie-object.service';
 })
 export class MoviesComponent implements OnInit {
   topMovielist;
-  worstMovieList;
+  disneyMovieList;
   inTheatresList;
   comedyMovieList;
 
@@ -17,8 +17,8 @@ export class MoviesComponent implements OnInit {
   ngOnInit() {
     this.mos.CreateTopMovieArray()
       .then((data) => this.topMovielist = data);
-    this.mos.CreateWorstMovieArray()
-      .then((data) => this.worstMovieList = data);
+    this.mos.CreateMoviesByDisneyArray()
+      .then((data) => this.disneyMovieList = data);
     this.mos.CreateInTheatresArray()
     .then((data) => this.inTheatresList = data);
     this.mos.CreateGenreArray(35)
