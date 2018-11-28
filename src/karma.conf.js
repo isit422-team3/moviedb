@@ -26,6 +26,12 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false
+    singleRun: false,
+    files: [
+      "./node_modules/bootstrap/dist/css/bootstrap.css",
+      "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+      "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+      "src/styles.scss"
+    ]
   });
 };
