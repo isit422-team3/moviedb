@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MovieDetailsComponent } from './movie-details.component';
+//import { MatTableDataSource } from '@angular/material';
+import { FormsModule } from '@angular/forms'; // <<<<< klf
+import { HttpClientModule }    from '@angular/common/http';  
+import { RouterModule } from '@angular/router';
 
 describe('MovieDetailsComponent', () => {
   let component: MovieDetailsComponent;
@@ -8,7 +11,8 @@ describe('MovieDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MovieDetailsComponent ]
+      declarations: [ MovieDetailsComponent ],
+      imports: [ FormsModule, HttpClientModule, RouterModule.forRoot([]) ]
     })
     .compileComponents();
   }));

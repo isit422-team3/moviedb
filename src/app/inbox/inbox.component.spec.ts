@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { InboxComponent } from './inbox.component';
+import { FormsModule } from '@angular/forms'; // <<<<< klf
+import { MatTableModule } from '@angular/material';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('InboxComponent', () => {
   let component: InboxComponent;
@@ -8,7 +10,9 @@ describe('InboxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InboxComponent ]
+      declarations: [ InboxComponent ],
+      imports: [ FormsModule, MatTableModule ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));

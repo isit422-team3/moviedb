@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RatingsComponent } from './ratings.component';
+import { FormsModule } from '@angular/forms'; // <<<<< klf
+import { HttpClientModule }    from '@angular/common/http';  
+import { MatTableModule } from '@angular/material';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('RatingsComponent', () => {
   let component: RatingsComponent;
@@ -8,7 +11,9 @@ describe('RatingsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RatingsComponent ]
+      declarations: [ RatingsComponent ],
+      imports: [ FormsModule, HttpClientModule, MatTableModule ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));

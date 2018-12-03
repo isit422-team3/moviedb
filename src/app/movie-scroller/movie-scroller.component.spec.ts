@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MovieScrollerComponent } from './movie-scroller.component';
+import { FormsModule } from '@angular/forms'; // <<<<< klf
+import { HttpClientModule }    from '@angular/common/http';  
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('MovieScrollerComponent', () => {
   let component: MovieScrollerComponent;
@@ -8,7 +10,9 @@ describe('MovieScrollerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MovieScrollerComponent ]
+      declarations: [ MovieScrollerComponent ],
+      imports: [ FormsModule, HttpClientModule ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));

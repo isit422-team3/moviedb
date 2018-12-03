@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DbClientService } from '../services/db-client.service';
 
 @Component({
   selector: 'app-user',
@@ -9,13 +8,9 @@ import { DbClientService } from '../services/db-client.service';
 export class UserComponent implements OnInit {
   userInformation;
 
-  constructor(private db: DbClientService) { }
+  constructor() { }
 
   ngOnInit() {
-    //this.db.getUser(user.username) = this.userInformation;
-    //or
-    //this.db.getUser(user.username)
-    //.then((data) => this.userInformation = data)
   }
 
   openMessage() {
