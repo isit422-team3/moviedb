@@ -51,5 +51,5 @@ export class User {
     reviews: number[];
     review_count: number;
     status: string;
-    settings: any;
+    settings: string[];
 }

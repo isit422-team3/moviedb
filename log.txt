@@ -1,0 +1,25 @@
+[33m02 12 2018 05:20:33.691:WARN [watcher]: [39mPattern "C:/Users/tyler/Git/moviedb/src/node_modules/bootstrap/dist/css/bootstrap.css" does not match any file.
+[33m02 12 2018 05:20:33.698:WARN [watcher]: [39mPattern "C:/Users/tyler/Git/moviedb/src/node_modules/ngx-bootstrap/datepicker/bs-datepicker.css" does not match any file.
+[33m02 12 2018 05:20:33.698:WARN [watcher]: [39mPattern "C:/Users/tyler/Git/moviedb/src/node_modules/@angular/material/prebuilt-themes/indigo-pink.css" does not match any file.
+[33m02 12 2018 05:20:33.698:WARN [watcher]: [39mPattern "C:/Users/tyler/Git/moviedb/src/src/styles.scss" does not match any file.
+[33m02 12 2018 05:20:36.807:WARN [karma]: [39mNo captured browser, open http://localhost:9876/
+[32m02 12 2018 05:20:36.810:INFO [karma-server]: [39mKarma v3.1.1 server started at http://0.0.0.0:9876/
+[32m02 12 2018 05:20:36.810:INFO [launcher]: [39mLaunching browsers Chrome with concurrency unlimited
+[32m02 12 2018 05:20:36.815:INFO [launcher]: [39mStarting browser Chrome
+[33m02 12 2018 05:20:41.873:WARN [watcher]: [39mPattern "C:/Users/tyler/Git/moviedb/src/node_modules/bootstrap/dist/css/bootstrap.css" does not match any file.
+[33m02 12 2018 05:20:41.874:WARN [watcher]: [39mPattern "C:/Users/tyler/Git/moviedb/src/node_modules/ngx-bootstrap/datepicker/bs-datepicker.css" does not match any file.
+[33m02 12 2018 05:20:41.874:WARN [watcher]: [39mPattern "C:/Users/tyler/Git/moviedb/src/node_modules/@angular/material/prebuilt-themes/indigo-pink.css" does not match any file.
+[33m02 12 2018 05:20:41.874:WARN [watcher]: [39mPattern "C:/Users/tyler/Git/moviedb/src/src/styles.scss" does not match any file.
+[33m02 12 2018 05:20:42.392:WARN [karma]: [39mNo captured browser, open http://localhost:9876/
+[32m02 12 2018 05:20:42.434:INFO [Chrome 70.0.3538 (Windows 10 0.0.0)]: [39mConnected on socket XbzyBqz1SNnGOGsAAAAA with id 522336
+Chrome 70.0.3538 (Windows 10 0.0.0): Executed 0 of 23 SUCCESS (0 secs / 0 secs)
+[1A[2KChrome 70.0.3538 (Windows 10 0.0.0): Executed 1 of 23 SUCCESS (0 secs / 0.033 secs)
+[1A[2KChrome 70.0.3538 (Windows 10 0.0.0): Executed 1 of 23 (skipped 22) SUCCESS (0.075 secs / 0.033 secs)
+TOTAL: 1 SUCCESS
+TOTAL: 1 SUCCESS
+[33m02 12 2018 05:23:25.969:WARN [Chrome 70.0.3538 (Windows 10 0.0.0)]: [39mDisconnected (0 times)Client disconnected from CONNECTED state (transport error)
+[1A[2KChrome 70.0.3538 (Windows 10 0.0.0) ERROR
+  DisconnectedClient disconnected from CONNECTED state (transport error)
+Chrome 70.0.3538 (Windows 10 0.0.0): Executed 1 of 23 (skipped 22) SUCCESS (0.075 secs / 0.033 secs)
+Chrome 70.0.3538 (Windows 10 0.0.0) ERROR
+  DisconnectedClient disconnected from CONNECTED state (transport error)

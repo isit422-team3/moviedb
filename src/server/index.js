@@ -16,5 +16,6 @@ app.use('/api', routes);
 app.get('*', (req, res) => {
     res.sendFile('dist/moviedb/index.html', {root});
 });
+let server = app.listen(port, () => console.log(`API running on localhost:${port}`));
 
-app.listen(port, () => console.log(`API running on localhost:${port}`));
+module.exports = server;

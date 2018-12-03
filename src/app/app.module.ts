@@ -22,6 +22,7 @@ import { ReviewComponent } from './review/review.component';
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { InboxComponent } from './inbox/inbox.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,8 @@ import { InboxComponent } from './inbox/inbox.component';
     MaterialModule,
     BrowserAnimationsModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

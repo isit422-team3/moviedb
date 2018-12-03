@@ -9,7 +9,7 @@ router.get('/movies', (req, res) => {
     dbService.getMovies(req, res);
 });
 
-router.get('/movie/:movie_id', (req, res) => {
+router.get('/movie', (req, res) => {
     dbService.getMovie(req, res);
 });
 
@@ -27,7 +27,7 @@ router.delete('/movie/:movie_id', (req, res) => {
 /////////////////////////////////////////////////////////////////
 
 //routes for users
-router.get('/user/:user_id', (req, res) => {
+router.get('/user', (req, res) => {
     dbService.getUser(req, res);
 });
 

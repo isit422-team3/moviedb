@@ -11,25 +11,31 @@ function getMovies(req, res) {
     docquery
       .exec()
       .then(movies => {
+          console.log("HERE ARE YOUR MOVIES!",movies);
           res.status(200).json(movies);
       })
       .catch(error => {
           res.status(500).send(error);
+          console.log(error);
           return;
       });
 }
 
 function getMovie(req, res) {
-    const docquery = Movie.find({movie_id: req.body.movie_id});
-    docquery
-      .exec()
-      .then(movie => {
-          res.status(200).json(movie);
-      })
-      .catch(error => {
-          res.status(500).send(error);
-          return;
-      });
+    const movie_id = req.query.movie_id;
+    console.log(movie_id);
+    console.log('params:',req.query);
+    console.log('request:',req);
+    console.log('body:', req.body)
+    Movie.findOne({movie_id:movie_id})
+    .then(movie => {
+        console.log("HERE IS YOUR MOVIE!", movie)
+        res.status(200).json(movie);
+    })
+    .catch(error => {
+        res.status(500).send(error);
+        return;
+    });
 }
 
 function postMovie(req, res) {
@@ -94,6 +100,19 @@ function deleteMovie(req, res) {
 //USER METHODS
 function getUser(req, res) {
     const docquery = User.find({user_id: req.body.user_id});
+    docquery
+      .exec()
+      .then(user => {
+          res.status(200).json(user);
+      })
+      .catch(error => {
+          res.status(500).send(error);
+          return;
+      });
+}
+
+function getUsers(req, res) {
+    const docquery = User.find({});
     docquery
       .exec()
       .then(user => {
@@ -260,7 +279,7 @@ function deleteReview(req, res) {
 
 function checkServerError(res, error) {
     if (error) {
-        res.stats(500).send(error);
+        res.status(500).send(error);
         return error;
     } 
 }
@@ -292,7 +311,8 @@ module.exports = {
     getUser,
     PutMovie,
     deleteMovie,
-    getMovie
+    getMovie,
+    getUsers
 }
 ////////////////////////////////////////////////////////////////////////////
 
