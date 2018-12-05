@@ -116,6 +116,7 @@ function getUsers(req, res) {
     docquery
       .exec()
       .then(user => {
+          console.log("HERE ARE YOUR USERS!",user);
           res.status(200).json(user);
       })
       .catch(error => {

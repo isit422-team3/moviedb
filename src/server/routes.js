@@ -31,6 +31,11 @@ router.get('/user', (req, res) => {
     dbService.getUser(req, res);
 });
 
+router.get('/users', (req, res) => {
+    dbService.getUsers(req, res);
+});
+
+
 router.post('/user', (req, res) => {
     dbService.postReview(req, res);
 });

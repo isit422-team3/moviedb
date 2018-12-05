@@ -33,7 +33,71 @@
   </div>
   </div>
 
-  <div class="review">
+
+  <!-- // soley retrieved from our mongodb or user input.
+export class Review {
+    review_id: number;
+    author_id: number;
+    movie_id: number;
+    title: string;
+    rating_up: number;
+    rating_down: number;
+    review_score: number;
+} -->
+<button (click)="reviewTestBtn()">Review Test</button>
+
+<div *ngFor="let a of allRatings; let i=index">
+    <div *ngIf="i<1">
+      <form id="review-form">
+        <div class="form-group">
+          <label for="review-title">Title</label>
+          <input type="text" class="form-control" id="review-title">
+        </div>
+        <div class="form-group">
+        <div class="rating">
+          <div class="row">
+            <div class="col-md-2">
+              <p>Rating</p>
+            </div>
+            <div class="col-md-10">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ratingOptions" id="rating1" value="1">
+                  <label class="form-check-label" for="rating1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ratingOptions" id="rating2" value="2">
+                  <label class="form-check-label" for="rating2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ratingOptions" id="rating3" value="3">
+                  <label class="form-check-label" for="rating3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ratingOptions" id="rating4" value="4">
+                  <label class="form-check-label" for="rating4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ratingOptions" id="rating5" value="5">
+                  <label class="form-check-label" for="rating5">5</label>
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!-- <div class="form-group">
+          <label for="review-text">Comment</label>
+          <textarea class="form-control" id="review-text" rows="3"></textarea>
+        </div> -->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="number" name="review-user" tabindex="-1" value="1"></div>
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="number" name="review-movie-id" tabindex="-1" value="{{a.movie_id}}"></div>
+        <button type="submit" class="btn btn-primary my-1">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  <!-- <div class="review">
     <div class="rating">
       <h2>Review</h2>
         <form id="review">
@@ -55,6 +119,6 @@
           <br/><textarea rows="4" cols="50" name="review" form="review"></textarea> <br />
           <input type="submit">
         </form>
+
     </div>
-  </div>
-</div>
+  </div> -->
