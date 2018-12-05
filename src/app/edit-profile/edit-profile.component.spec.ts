@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { EditProfileComponent } from './edit-profile.component';
 import { FormsModule } from '@angular/forms'; // <<<<< klf
 import { HttpClientModule }    from '@angular/common/http';  
+import { RouterModule } from '@angular/router';
 
 describe('EditProfileComponent', () => {
   let component: EditProfileComponent;
@@ -10,7 +11,7 @@ describe('EditProfileComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ EditProfileComponent ],
-      imports: [ FormsModule, HttpClientModule]
+      imports: [ FormsModule, HttpClientModule, RouterModule.forRoot([])]
     })
     .compileComponents();
   }));
@@ -29,6 +30,6 @@ describe('EditProfileComponent', () => {
     const fixture = TestBed.createComponent(EditProfileComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('div').textContent).toContain('First name:');
+    expect(compiled.querySelector('div').textContent).toContain('Name:');
   }));
 });

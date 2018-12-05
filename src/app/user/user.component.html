@@ -20,32 +20,26 @@
             <div class="col-md-2">
                 <div class="profile-head">
                     <strong>
-                        FirstName LastName
+                        {{user.name}}
                     </strong>
                     <p>
 
-                        <strong>From:</strong> Seattle, Wa <br />
+                        <strong>From:</strong> {{user.hometown}} <br />
 
-                        <strong>Favorite Movie:</strong> Interstellar <br />
+                        <strong>Favorite Movie:</strong> {{user.movie}} <br />
 
                         <strong>Socials:</strong> <br />
 
                     </p>
                     <h6> twitter</h6>
-                    <p class="proile-followers"><span>22 followers</span></p>
-                    <input type="submit" class="follow-btn" name="follow" value="follow" />
+                    <p class="proile-followers"><span>{{followers}}</span></p>
+                    <input type="submit" class="follow-btn" (click)="follow()" name="follow" value="follow" />
                 </div>
             </div>
             <div class="col-md-7">
                 <strong>About me:</strong>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce wisi.
-                    Donec vitae arcu. Donec quis nibh at felis congue commodo. Cras pede libero,
-                    dapibus nec, pretium sit amet, tempor quis. Maecenas libero. Duis sapien nunc,
-                    commodo et, interdum suscipit, sollicitudin et, dolor. Nullam feugiat,
-                    turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum
-                    odio risus sit amet ante. Nunc dapibus tortor vel mi dapibus sollicitudin.
-                    Aliquam id dolor. Duis condimentum augue id magna semper rutrum.</p>
-                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" routerLink="/editProfile" />
+                <p>{{user.about}}</p>
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" routerLink="/editProfile" [queryParams]="user"/>
 
             </div>
 

@@ -3,6 +3,7 @@ import { UserComponent } from './user.component';
 import { FormsModule } from '@angular/forms'; // <<<<< klf
 import { HttpClientModule }    from '@angular/common/http';  
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 describe('UserComponent', () => {
   let component: UserComponent;
@@ -11,7 +12,7 @@ describe('UserComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserComponent ],
-      imports: [ FormsModule, HttpClientModule ],
+      imports: [ FormsModule, HttpClientModule, RouterModule.forRoot([]) ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
