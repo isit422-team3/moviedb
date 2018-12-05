@@ -1,39 +1,38 @@
-// var assert = require('assert');
-// var superagent = require('superagent');
-// var server = require('../server');
-// var users = require('../users');
-// var status = require('http-status');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const server = require('../index');
+const Movie = require('../models/movie.model');
+const expect = chai.expect;
 
-// describe('/user', function() {
-//   var app;
+chai.use(chaiHttp);
 
-//   before(function() {
-//     app = server(3000);
-//   });
+describe('Mongodb Movie Collection routes', () => {
 
-//   after(function() {
-//     app.close();
-//   });
+  describe('GET /movies', () => {
 
-//   it('returns username if name param is a valid user', function(done) {
-//     users.list = ['test'];
-//     superagent.get('http://localhost:3000/user/test').end(function(err, res) {
-//       assert.ifError(err);
-//       assert.equal(res.status, status.OK);
-//       var result = JSON.parse(res.text);
-//       assert.deepEqual({ user: 'test' }, result);
-//       done();
-//     });
-//   });
+    it('returns a movie array', (done) => {
+      chai.request(server)
+        .get('/api/movies')
+        .end((error, response) => {
+          if (error) done(error)
+          // Now let's check our response
+          expect(response).to.have.status(200)
+          expect(response.body).to.contain([Movie])
+          done()
+        });
+    });
 
-//   it('returns 404 if user named `params.name` not found', function(done) {
-//     users.list = ['test'];
-//     superagent.get('http://localhost:3000/user/notfound').end(function(err, res) {
-//       assert.ifError(err);
-//       assert.equal(res.status, status.NOT_FOUND);
-//       var result = JSON.parse(res.text);
-//       assert.deepEqual({ error: 'Not Found' }, result);
-//       done();
-//     });
-//   });
-// });
+  // Let's add this to the same describe block to keep this file organized
+    it('Returns a "Hello World" message', (done) => {
+      chai.request(server)
+        .get('/')
+        .end((error, response) => {
+          if (error) done(error);
+          expect(response.body).to.be.deep.equal({
+              message: 'Hello, world!'
+          });
+          done();
+        });
+    });
+  });
+});
