@@ -32,30 +32,34 @@ router.get('/user', (req, res) => {
 });
 
 router.post('/user', (req, res) => {
-    dbService.postReview(req, res);
+    dbService.postUser(req, res);
+});
+
+router.post('/users', (req, res) => {
+    dbService.getUsers(req, res);
 });
 
 router.put('/user/:user_id', (req, res) => {
-    dbService.PutReview(req, res);
+    dbService.PutUser(req, res);
 });
 
 router.delete('/user/:user_id', (req, res) => {
-    dbService.deleteReview(req, res);
+    dbService.deleteUser(req, res);
 });
 /////////////////////////////////////////////////////////////////
 
 //Review Routes
 
 router.post('/review', (req, res) => {
-    dbService.postUser(req, res);
+    dbService.postReview(req, res);
 });
 
 router.put('/review/:author_id/:movie_id', (req, res) => {
-    dbService.PutUser(req, res);
+    dbService.PutReview(req, res);
 });
 
 router.delete('/review/:author_id/:movie_id', (req, res) => {
-    dbService.deleteUser(req, res);
+    dbService.deleteReview(req, res);
 });
 /////////////////////////////////////////////////////////////////
 
